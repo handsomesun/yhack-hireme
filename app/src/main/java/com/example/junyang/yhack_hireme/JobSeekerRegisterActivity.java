@@ -38,8 +38,8 @@ public class JobSeekerRegisterActivity extends Activity {
         final EditText nameEditText = (EditText)findViewById(R.id.editText_name);
         final EditText urlEditText = (EditText)findViewById(R.id.editText_linkedin);
 
-        Button confirmButton = (Button)findViewById(R.id.button_confirm);
-        confirmButton.setOnClickListener(new View.OnClickListener() {
+        Button finishButton = (Button)findViewById(R.id.editText_email_recruiter);
+        finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent goToJobSeekerProfile = new Intent(activity_context, JobSeekerProfileActivity.class);

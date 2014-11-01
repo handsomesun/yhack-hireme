@@ -21,5 +21,9 @@
     </string-array>
 
     <string name="title_activity_job_seeker_profile">JobSeekerProfileActivity</string>
+    <string name="title_activity_recruiter_main">RecruiterMainActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
 
 </resources>

@@ -18,15 +18,19 @@
         </activity>
         <activity
             android:name=".JobSeekerRegisterActivity"
-            android:label="@string/title_activity_job_seeker_register" >
+            android:label="JobSeekerRegisterActivity" >
         </activity>
         <activity
             android:name=".RecruiterRegisterActivity"
-            android:label="@string/title_activity_recruiter_register" >
+            android:label="RecruiterRegisterActivity" >
         </activity>
         <activity
             android:name=".JobSeekerProfileActivity"
             android:label="@string/title_activity_job_seeker_profile" >
+        </activity>
+        <activity
+            android:name=".RecruiterMainActivity"
+            android:label="@string/title_activity_recruiter_main" >
         </activity>
     </application>
 

@@ -1,10 +1,14 @@
 package com.example.junyang.yhack_hireme;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class RecruiterRegisterActivity extends Activity {
 
@@ -12,6 +16,20 @@ public class RecruiterRegisterActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recruiter_register);
+
+        final Context activity_context = this;
+        EditText nameEditText = (EditText)findViewById(R.id.editText_name_recruiter);
+        EditText companyNameEditText = (EditText)findViewById(R.id.editText_company_name);
+        EditText descriptionEditText = (EditText) findViewById(R.id.editText_des_recruiter);
+
+        Button finishButton = (Button) findViewById(R.id.button_finish_recruiter);
+        finishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goToRegisterMain = new Intent(activity_context, RecruiterMainActivity.class);
+                startActivity(goToRegisterMain);
+            }
+        });
     }
 
 
