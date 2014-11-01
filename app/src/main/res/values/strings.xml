@@ -4,5 +4,7 @@
     <string name="app_name">YHack-hireme</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_job_seeker_register">JobSeekerRegisterActivity</string>
+    <string name="title_activity_recruiter_register">RecruiterRegisterActivity</string>
 
 </resources>

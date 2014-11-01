@@ -1,9 +1,13 @@
 package com.example.junyang.yhack_hireme;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends Activity {
@@ -12,6 +16,23 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final Context activity_content = this;
+        Button jobSeekerButton = (Button)findViewById(R.id.job_seeker_button);
+        jobSeekerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goToJobSeekerRegister = new Intent(activity_content, JobSeekerRegisterActivity.class);
+                startActivity(goToJobSeekerRegister);
+            }
+        });
+
+        final Button recruiterButton = (Button)findViewById(R.id.recruiter_button);
+        recruiterButton.setOnClickListener(new View.OnClickListener() {
+           public void onClick(View view) {
+               Intent goToRecruiterRegister = new Intent(activity_content, RecruiterRegisterActivity.class);
+               startActivity(goToRecruiterRegister);
+           }
+        });
     }
 
 
