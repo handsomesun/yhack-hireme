@@ -24,6 +24,10 @@
             android:name=".RecruiterRegisterActivity"
             android:label="@string/title_activity_recruiter_register" >
         </activity>
+        <activity
+            android:name=".JobSeekerProfileActivity"
+            android:label="@string/title_activity_job_seeker_profile" >
+        </activity>
     </application>
 
 </manifest>
