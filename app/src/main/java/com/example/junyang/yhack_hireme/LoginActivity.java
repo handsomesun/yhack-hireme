@@ -83,7 +83,7 @@ public class LoginActivity extends Activity {
             public void onClick(View v)
             {
                 //your login calculation goes here
-                //TODO: loging and decide if recruiter or job seeker
+                //TODO: login and decide if recruiter or job seeker
             }
         });
     }
@@ -103,7 +103,6 @@ public class LoginActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                //IF sign up success, go to registerclass
                 signUp();
             }
         });
@@ -113,6 +112,8 @@ public class LoginActivity extends Activity {
         String username = usernameEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
         String passwordAgain = passwordAgainEditText.getText().toString().trim();
+        //test
+        String userType = "recruiter";
 
         boolean validationError = false;
         StringBuilder validationErrorMessage = new StringBuilder(getString(R.string.error_intro));

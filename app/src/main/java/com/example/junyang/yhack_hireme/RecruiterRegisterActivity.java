@@ -10,7 +10,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.parse.ParseACL;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
+
 public class RecruiterRegisterActivity extends Activity {
+
+    EditText nameEditText;
+    EditText companyNameEditText;
+    EditText descriptionEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,19 +27,42 @@ public class RecruiterRegisterActivity extends Activity {
         setContentView(R.layout.activity_recruiter_register);
 
         final Context activity_context = this;
-        final EditText nameEditText = (EditText)findViewById(R.id.editText_name_recruiter);
-        final EditText companyNameEditText = (EditText)findViewById(R.id.editText_company_name);
-        final EditText descriptionEditText = (EditText) findViewById(R.id.editText_des_recruiter);
+        nameEditText = (EditText)findViewById(R.id.editText_name_recruiter);
+        companyNameEditText = (EditText)findViewById(R.id.editText_company_name);
+        descriptionEditText = (EditText) findViewById(R.id.editText_des_recruiter);
 
         Button finishButton = (Button) findViewById(R.id.button_finish_register_recruiter);
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent goToRegisterMain = new Intent(activity_context, RecruiterMainActivity.class);
-                goToRegisterMain.putExtra("RECRUITER_NAME", nameEditText.getText().toString());
-                goToRegisterMain.putExtra("RECRUITER_COMPANY_NAME", companyNameEditText.getText().toString());
-                goToRegisterMain.putExtra("RECRUITEE_DESCRIPTION", descriptionEditText.getText().toString());
-                startActivity(goToRegisterMain);
+                postRecruiterInfo();
+            }
+        });
+    }
+
+    private void postRecruiterInfo() {
+        // 1
+        RecruiterInfo newRecruiter = new RecruiterInfo();
+        // TODO: cache current user
+        newRecruiter.setUser(ParseUser.getCurrentUser());
+        newRecruiter.setName(nameEditText.getText().toString());
+        newRecruiter.setCompany(companyNameEditText.getText().toString());
+        newRecruiter.setDescription(descriptionEditText.getText().toString());
+
+        // 2
+        ParseACL acl = new ParseACL();
+        acl.setPublicReadAccess(true);
+        newRecruiter.setACL(acl);
+
+        // 3
+        newRecruiter.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                //                Intent goToRegisterMain = new Intent(activity_context, RecruiterMainActivity.class);
+//                goToRegisterMain.putExtra("RECRUITER_NAME", nameEditText.getText().toString());
+//                goToRegisterMain.putExtra("RECRUITER_COMPANY_NAME", companyNameEditText.getText().toString());
+//                goToRegisterMain.putExtra("RECRUITEE_DESCRIPTION", descriptionEditText.getText().toString());
+//                startActivity(goToRegisterMain);
             }
         });
     }
