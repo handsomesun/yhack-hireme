@@ -27,8 +27,7 @@
         android:id="@+id/editText_name"
         android:layout_below="@+id/textview9"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="firstname lastname" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -92,7 +91,7 @@
         android:layout_height="50dp"
         android:text="Finish"
         android:id="@+id/editText_email_recruiter"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="30dp"
         android:layout_below="@+id/editText_linkedin"
         android:layout_centerHorizontal="true" />
 
@@ -130,7 +129,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Password"
-        android:id="@+id/textView6"
+        android:id="@+id/textView_description_recruiter"
         android:layout_below="@+id/editText_username"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -141,7 +140,7 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/editText_password"
-        android:layout_below="@+id/textView6"
+        android:layout_below="@+id/textView_description_recruiter"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 

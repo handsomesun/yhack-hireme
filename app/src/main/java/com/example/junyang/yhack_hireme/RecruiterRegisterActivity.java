@@ -18,15 +18,18 @@ public class RecruiterRegisterActivity extends Activity {
         setContentView(R.layout.activity_recruiter_register);
 
         final Context activity_context = this;
-        EditText nameEditText = (EditText)findViewById(R.id.editText_name_recruiter);
-        EditText companyNameEditText = (EditText)findViewById(R.id.editText_company_name);
-        EditText descriptionEditText = (EditText) findViewById(R.id.editText_des_recruiter);
+        final EditText nameEditText = (EditText)findViewById(R.id.editText_name_recruiter);
+        final EditText companyNameEditText = (EditText)findViewById(R.id.editText_company_name);
+        final EditText descriptionEditText = (EditText) findViewById(R.id.editText_des_recruiter);
 
         Button finishButton = (Button) findViewById(R.id.button_finish_recruiter);
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent goToRegisterMain = new Intent(activity_context, RecruiterMainActivity.class);
+                goToRegisterMain.putExtra("RECRUITER_NAME", nameEditText.getText().toString());
+                goToRegisterMain.putExtra("RECRUITER_COMPANY_NAME", companyNameEditText.getText().toString());
+                goToRegisterMain.putExtra("RECRUITEE_DESCRIPTION", descriptionEditText.getText().toString());
                 startActivity(goToRegisterMain);
             }
         });
