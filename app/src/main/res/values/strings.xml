@@ -6,5 +6,16 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_job_seeker_register">JobSeekerRegisterActivity</string>
     <string name="title_activity_recruiter_register">RecruiterRegisterActivity</string>
-
+    <string-array name="industry_array">
+        <item>IT</item>
+        <item>Finance</item>
+        <item>Health</item>
+        <item>etc</item>
+    </string-array>
+    <string-array name="experience_array">
+        <item>less than 1 year</item>
+        <item>1 to 3 years</item>
+        <item>3 to 5 years</item>
+        <item>more than 5 years</item>
+    </string-array>
 </resources>

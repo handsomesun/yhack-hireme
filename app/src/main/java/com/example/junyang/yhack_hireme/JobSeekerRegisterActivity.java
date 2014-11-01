@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
 
 
 public class JobSeekerRegisterActivity extends Activity {
@@ -12,6 +15,18 @@ public class JobSeekerRegisterActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_seeker_register);
+
+        Spinner spinner_industry = (Spinner) findViewById(R.id.spinner_industry);
+        ArrayAdapter<CharSequence> adapter_industry = ArrayAdapter.createFromResource(this,
+                R.array.industry_array, android.R.layout.simple_spinner_item);
+        adapter_industry.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_industry.setAdapter(adapter_industry);
+
+        Spinner spinner_experience = (Spinner) findViewById(R.id.spinner_experience);
+        ArrayAdapter<CharSequence> adapter_experience = ArrayAdapter.createFromResource(this,
+                R.array.experience_array, android.R.layout.simple_spinner_item);
+        adapter_experience.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_experience.setAdapter(adapter_experience);
     }
 
 
