@@ -18,21 +18,13 @@
         android:id="@+id/textView" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="Log in as job seeker"
-        android:id="@+id/button_login_job_seeker"
+        android:text="Log in"
+        android:id="@+id/button_login"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="67dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log in as recruiter"
-        android:id="@+id/button_login_recruiter"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="67dp"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -40,8 +32,8 @@
         android:layout_height="wrap_content"
         android:text="Don't have an account? sign up here!"
         android:id="@+id/button_new_user"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

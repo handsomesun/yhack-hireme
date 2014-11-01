@@ -22,7 +22,7 @@ public class RecruiterRegisterActivity extends Activity {
         final EditText companyNameEditText = (EditText)findViewById(R.id.editText_company_name);
         final EditText descriptionEditText = (EditText) findViewById(R.id.editText_des_recruiter);
 
-        Button finishButton = (Button) findViewById(R.id.button_finish_recruiter);
+        Button finishButton = (Button) findViewById(R.id.button_finish_register_recruiter);
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

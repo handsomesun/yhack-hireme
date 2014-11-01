@@ -27,4 +27,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_longin">LonginActivity</string>
 
+    <string name="error_intro">Error: </string>
+    <string name="error_blank_username">please don\'t leave username blank</string>
+    <string name="error_join"> and </string>
+    <string name="error_blank_password">please enter password</string>
+    <string name="error_mismatched_passwords">the confirm password does not match</string>
+    <string name="error_end">.</string>
+
 </resources>

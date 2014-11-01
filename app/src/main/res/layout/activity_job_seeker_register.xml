@@ -17,7 +17,8 @@
         android:id="@+id/textview9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/editText_password"/>
+        android:layout_below="@+id/textView4"
+        android:paddingTop="10dp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -27,7 +28,8 @@
         android:id="@+id/editText_name"
         android:layout_below="@+id/textview9"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:hint="your email" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -90,58 +92,18 @@
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:text="Finish"
-        android:id="@+id/editText_email_recruiter"
+        android:id="@+id/button_finish_register_job_seeker"
         android:layout_marginBottom="30dp"
-        android:layout_below="@+id/editText_linkedin"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="New Job Seeker"
+        android:text="Please fill out the following information"
         android:id="@+id/textView4"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Username"
-        android:id="@+id/textView_industry"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText_username"
-        android:layout_below="@+id/textView_industry"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="please enter your email" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Password"
-        android:id="@+id/textView_description_recruiter"
-        android:layout_below="@+id/editText_username"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText_password"
-        android:layout_below="@+id/textView_description_recruiter"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>

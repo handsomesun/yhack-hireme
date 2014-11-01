@@ -38,18 +38,23 @@ public class JobSeekerRegisterActivity extends Activity {
         final EditText nameEditText = (EditText)findViewById(R.id.editText_name);
         final EditText urlEditText = (EditText)findViewById(R.id.editText_linkedin);
 
-        Button finishButton = (Button)findViewById(R.id.editText_email_recruiter);
+        Button finishButton = (Button)findViewById(R.id.button_finish_register_job_seeker);
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent goToJobSeekerProfile = new Intent(activity_context, JobSeekerProfileActivity.class);
-                goToJobSeekerProfile.putExtra("NAME", nameEditText.getText().toString());
-                goToJobSeekerProfile.putExtra("INDUSTRY", spinner_industry.getSelectedItem().toString());
-                goToJobSeekerProfile.putExtra("EXPERIENCE", spinner_experience.getSelectedItem().toString());
-                goToJobSeekerProfile.putExtra("LINKEDIN_URL", urlEditText.getText().toString());
-                startActivity(goToJobSeekerProfile);
+//                Intent goToJobSeekerProfile = new Intent(activity_context, JobSeekerProfileActivity.class);
+//                goToJobSeekerProfile.putExtra("NAME", nameEditText.getText().toString());
+//                goToJobSeekerProfile.putExtra("INDUSTRY", spinner_industry.getSelectedItem().toString());
+//                goToJobSeekerProfile.putExtra("EXPERIENCE", spinner_experience.getSelectedItem().toString());
+//                goToJobSeekerProfile.putExtra("LINKEDIN_URL", urlEditText.getText().toString());
+//                startActivity(goToJobSeekerProfile);
+                signUpJobSeeker();
             }
         });
+    }
+
+    private void signUpJobSeeker() {
+
     }
 
 

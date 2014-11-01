@@ -12,11 +12,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="New Recruiter"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Please fill out the following information"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_alignParentLeft="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,9 +24,10 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Name"
         android:id="@+id/textView2"
-        android:layout_below="@+id/editText_password_recruiter"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:paddingTop="10dp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -80,53 +81,11 @@
         android:layout_alignParentStart="true"
         android:hint="job type, qualification, comment etc." />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Username"
-        android:id="@+id/textView_description_recruiter"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="39dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editText_email_recruiter"
-        android:layout_below="@+id/textView_description_recruiter"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="please enter your email" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Password"
-        android:id="@+id/textView7"
-        android:layout_below="@+id/editText_email_recruiter"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText_password_recruiter"
-        android:layout_below="@+id/textView7"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <Button
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:text="Finish"
-        android:id="@+id/button_finish_recruiter"
+        android:id="@+id/button_finish_register_recruiter"
         android:layout_marginBottom="30dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
