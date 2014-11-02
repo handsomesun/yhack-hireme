@@ -10,6 +10,7 @@ public class App extends Application {
         ParseObject.registerSubclass(RecruiterInfo.class);
         ParseObject.registerSubclass(JobSeekerInfo.class);
         ParseObject.registerSubclass(CustomUser.class);
+        ParseObject.registerSubclass(Post.class);
         Parse.initialize(this, "A3EYRpl1cwSdMy5u5vUX196KW28QibBASJSJWBWD", "MDccMwvIxHjcdcpBx76JC5v74iSQRDmZPudf2Moy");
     }
 }
