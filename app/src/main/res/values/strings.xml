@@ -14,10 +14,11 @@
         <item>etc</item>
     </string-array>
     <string-array name="experience_array">
-        <item>less than 1 year</item>
-        <item>1 to 3 years</item>
-        <item>3 to 5 years</item>
-        <item>more than 5 years</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
 
     <string name="title_activity_job_seeker_profile">JobSeekerProfileActivity</string>

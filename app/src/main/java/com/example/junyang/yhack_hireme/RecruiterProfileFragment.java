@@ -2,6 +2,7 @@ package com.example.junyang.yhack_hireme;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -9,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 /**
@@ -60,7 +63,17 @@ public class RecruiterProfileFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+//            TextView recruiterName = (TextView) getActivity().findViewById(R.id.textView_name_recruiter);
+//            TextView recruiterCompany = (TextView) getActivity().findViewById(R.id.textView_company_recruiter);
+//            TextView recruiterDescription = (TextView) getActivity().findViewById(R.id.textView_description_recruiter);
+//
+//            recruiterName.setText(getArguments().getString("RECRUITER_NAME"));
+//            recruiterCompany.setText(getArguments().getString("RECRUITER_COMPANY_NAME"));
+//            recruiterDescription.setText(getArguments().getString("RECRUITER_DESCRIPTION"));
         }
+
+
     }
 
     @Override
@@ -80,6 +93,17 @@ public class RecruiterProfileFragment extends Fragment {
                 R.array.experience_array, android.R.layout.simple_spinner_item);
         adapter_industry.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         experienceSpinner.setAdapter(adapter_experience);
+
+        Button logoutButton = (Button)view.findViewById(R.id.button_logout_recruiter);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomUser.logOut();
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

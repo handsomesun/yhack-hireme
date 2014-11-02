@@ -132,7 +132,13 @@ public class RecruiterMainActivity extends Activity implements ActionBar.TabList
                     return new RecruitFragment();
                 case 1:
                     // Games fragment activity
-                    return new RecruiterProfileFragment();
+                    Fragment recruiterProfileFragment = new RecruiterProfileFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("RECRUITER_NAME", getIntent().getStringExtra("RECRUITER_NAME"));
+                    bundle.putString("RECRUITER_COMPANY_NAME", getIntent().getStringExtra("RECRUITER_COMPANY_NAME"));
+                    bundle.putString("RECRUITER_DESCRIPTION", getIntent().getStringExtra("RECRUITER_DESCRIPTION"));
+                    recruiterProfileFragment.setArguments(bundle);
+                    return recruiterProfileFragment;
             }
 
             return null;

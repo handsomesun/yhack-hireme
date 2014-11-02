@@ -20,13 +20,14 @@ public class RecruiterRegisterActivity extends Activity {
     EditText nameEditText;
     EditText companyNameEditText;
     EditText descriptionEditText;
+    Context activity_context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recruiter_register);
 
-        final Context activity_context = this;
+        activity_context = this;
         nameEditText = (EditText)findViewById(R.id.editText_name_recruiter);
         companyNameEditText = (EditText)findViewById(R.id.editText_company_name);
         descriptionEditText = (EditText) findViewById(R.id.editText_des_recruiter);
@@ -44,7 +45,7 @@ public class RecruiterRegisterActivity extends Activity {
         // 1
         RecruiterInfo newRecruiter = new RecruiterInfo();
         // TODO: cache current user
-        newRecruiter.setUser(ParseUser.getCurrentUser());
+        newRecruiter.setUsername(CustomUser.getCurrentUser().getString("username"));
         newRecruiter.setName(nameEditText.getText().toString());
         newRecruiter.setCompany(companyNameEditText.getText().toString());
         newRecruiter.setDescription(descriptionEditText.getText().toString());
@@ -58,11 +59,11 @@ public class RecruiterRegisterActivity extends Activity {
         newRecruiter.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
-                //                Intent goToRegisterMain = new Intent(activity_context, RecruiterMainActivity.class);
-//                goToRegisterMain.putExtra("RECRUITER_NAME", nameEditText.getText().toString());
-//                goToRegisterMain.putExtra("RECRUITER_COMPANY_NAME", companyNameEditText.getText().toString());
-//                goToRegisterMain.putExtra("RECRUITEE_DESCRIPTION", descriptionEditText.getText().toString());
-//                startActivity(goToRegisterMain);
+                Intent goToRegisterMain = new Intent(activity_context, RecruiterMainActivity.class);
+                goToRegisterMain.putExtra("RECRUITER_NAME", nameEditText.getText().toString());
+                goToRegisterMain.putExtra("RECRUITER_COMPANY_NAME", companyNameEditText.getText().toString());
+                goToRegisterMain.putExtra("RECRUITEE_DESCRIPTION", descriptionEditText.getText().toString());
+                startActivity(goToRegisterMain);
             }
         });
     }

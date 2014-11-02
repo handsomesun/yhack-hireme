@@ -12,31 +12,41 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.parse.ParseACL;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 
 public class JobSeekerRegisterActivity extends Activity {
+
+    EditText nameEditText;
+    EditText urlEditText;
+    Spinner spinner_industry;
+    Spinner spinner_experience;
+    Context activity_context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_seeker_register);
 
-        final Context activity_context = this;
+        activity_context = this;
 
-        final Spinner spinner_industry = (Spinner) findViewById(R.id.spinner_industry);
+        spinner_industry = (Spinner) findViewById(R.id.spinner_industry);
         ArrayAdapter<CharSequence> adapter_industry = ArrayAdapter.createFromResource(this,
                 R.array.industry_array, android.R.layout.simple_spinner_item);
         adapter_industry.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_industry.setAdapter(adapter_industry);
 
-        final Spinner spinner_experience = (Spinner) findViewById(R.id.spinner_experience);
+        spinner_experience = (Spinner) findViewById(R.id.spinner_experience);
         ArrayAdapter<CharSequence> adapter_experience = ArrayAdapter.createFromResource(this,
                 R.array.experience_array, android.R.layout.simple_spinner_item);
         adapter_experience.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_experience.setAdapter(adapter_experience);
 
-        final EditText nameEditText = (EditText)findViewById(R.id.editText_name);
-        final EditText urlEditText = (EditText)findViewById(R.id.editText_linkedin);
+        nameEditText = (EditText)findViewById(R.id.editText_name);
+        urlEditText = (EditText)findViewById(R.id.editText_linkedin);
 
         Button finishButton = (Button)findViewById(R.id.button_finish_register_job_seeker);
         finishButton.setOnClickListener(new View.OnClickListener() {
@@ -48,13 +58,38 @@ public class JobSeekerRegisterActivity extends Activity {
 //                goToJobSeekerProfile.putExtra("EXPERIENCE", spinner_experience.getSelectedItem().toString());
 //                goToJobSeekerProfile.putExtra("LINKEDIN_URL", urlEditText.getText().toString());
 //                startActivity(goToJobSeekerProfile);
-                signUpJobSeeker();
+                postJobSeekerInfo();
             }
         });
     }
 
-    private void signUpJobSeeker() {
+    private void postJobSeekerInfo() {
+        // 1
+        JobSeekerInfo newSeeker = new JobSeekerInfo();
+        // TODO: cache current user
+        newSeeker.setUsername(CustomUser.getCurrentUser().getString("username"));
+        newSeeker.setName(nameEditText.getText().toString());
+        newSeeker.setIndustry(spinner_industry.getSelectedItem().toString());
+        newSeeker.setExperience(Integer.valueOf(spinner_experience.getSelectedItem().toString()));
+        newSeeker.setLinkInLink(urlEditText.getText().toString());
 
+        // 2
+        ParseACL acl = new ParseACL();
+        acl.setPublicReadAccess(true);
+        newSeeker.setACL(acl);
+
+        // 3
+        newSeeker.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                Intent goToJobSeekerProfile = new Intent(activity_context, JobSeekerProfileActivity.class);
+                goToJobSeekerProfile.putExtra("NAME", nameEditText.getText().toString());
+                goToJobSeekerProfile.putExtra("INDUSTRY", spinner_industry.getSelectedItem().toString());
+                goToJobSeekerProfile.putExtra("EXPERIENCE", spinner_experience.getSelectedItem().toString());
+                goToJobSeekerProfile.putExtra("LINKEDIN_URL", urlEditText.getText().toString());
+                startActivity(goToJobSeekerProfile);
+            }
+        });
     }
 
 

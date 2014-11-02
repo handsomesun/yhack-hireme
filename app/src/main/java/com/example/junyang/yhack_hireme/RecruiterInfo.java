@@ -18,12 +18,12 @@ public class RecruiterInfo extends ParseObject {
         put("name", value);
     }
 
-    public ParseUser getUser() {
-        return getParseUser("user");
+    public String getUsername() {
+        return getString("username");
     }
 
-    public void setUser(ParseUser value) {
-        put("user", value);
+    public void setUsername(String value) {
+        put("username", value);
     }
 
     public String getCompany() {

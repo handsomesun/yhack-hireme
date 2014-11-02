@@ -53,6 +53,13 @@
         android:id="@+id/editText_sign_up_confirm_password"
         android:layout_gravity="center_horizontal" />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I am a recruiter"
+        android:id="@+id/checkBox_isRecruiter"
+        android:layout_gravity="center_horizontal" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
