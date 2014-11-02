@@ -157,8 +157,6 @@ public class LoginActivity extends Activity {
 //                                    intent.putExtra("INDUSTRY", jobSeekerInfo.getString("industry"));
 //                                    intent.putExtra("EXPERIENCE", jobSeekerInfo.getInt("experience"));
 //                                    intent.putExtra("LINKEDIN_URL", jobSeekerInfo.getString("linkin_url"));
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                            Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
 
                                 } else {

@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Description"
-        android:id="@+id/textView5"
+        android:id="@+id/textView_linkin_detail"
         android:layout_below="@+id/textView_company_recruiter"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -77,7 +77,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/textView_description_recruiter"
-        android:layout_below="@+id/textView5"
+        android:layout_below="@+id/textView_linkin_detail"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

@@ -27,12 +27,16 @@
     <string name="title_section2">Profile</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_longin">LonginActivity</string>
-
     <string name="error_intro">Error: </string>
     <string name="error_blank_username">please don\'t leave username blank</string>
     <string name="error_join"> and </string>
     <string name="error_blank_password">please enter password</string>
     <string name="error_mismatched_passwords">the confirm password does not match</string>
     <string name="error_end">.</string>
+    <string name="title_activity_visualization">VisualizationActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_visualize_post">VisualizePostActivity</string>
+    <string name="title_activity_post_detail">PostDetailActivity</string>
 
 </resources>
