@@ -4,5 +4,39 @@
     <string name="app_name">YHack-hireme</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_job_seeker_register">JobSeekerRegisterActivity</string>
+    <string name="title_activity_recruiter_register">RecruiterRegisterActivity</string>
+
+    <string-array name="industry_array">
+        <item>IT</item>
+        <item>Finance</item>
+        <item>Health</item>
+        <item>etc</item>
+    </string-array>
+    <string-array name="experience_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string name="title_activity_job_seeker_profile">JobSeekerProfileActivity</string>
+    <string name="title_activity_recruiter_main">RecruiterMainActivity</string>
+    <string name="title_section1">Recruit</string>
+    <string name="title_section2">Profile</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_longin">LonginActivity</string>
+    <string name="error_intro">Error: </string>
+    <string name="error_blank_username">please don\'t leave username blank</string>
+    <string name="error_join"> and </string>
+    <string name="error_blank_password">please enter password</string>
+    <string name="error_mismatched_passwords">the confirm password does not match</string>
+    <string name="error_end">.</string>
+    <string name="title_activity_visualization">VisualizationActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_visualize_post">VisualizePostActivity</string>
+    <string name="title_activity_post_detail">PostDetailActivity</string>
 
 </resources>
